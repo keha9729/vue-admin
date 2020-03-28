@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    // function add() {
+    //
+    // }
+    // add();
+    //
+    
+    //匿名函数  执行后赋值给变量 自我执行的匿名函数
+    // var add = function () {
+    //     console.log(1);
+    // }();
+    // console.log(function () {
+    //     return 1;
+    // }());
+
+    // document.onclick = function () {
+    //     console.log('你点击了文档！');
+    // }
+    // document.onclick();
+
+    //方法的调用
+    // var operation = {
+        //         add:function (num1,num2) {
+        //             console.log(num1 + num2);
+    //             return this;
+    //         },
+    //         subtract:function (num1,num2) {
+    //             console.log(num1 - num2);
+    //             return this;
+    //         },
+    //         '@':function () {
+    //             console.log('@');
+    //         }
+    //
+    // };
+    // operation.add(1,2).subtract(2,1);
+
+    // console.log(operation.add(1,2));
+    // console.log(operation.subtract(2,1));
+    // console.log(operation['@'](1));
+
+    // var data = [3,4,2,1];
+    // function multiply(num1,num2,num3,num4) {
+    //     return num1 * num2 * num3 * num4;
+    // }
+    // console.log(multiply.apply(window,data));
+
+    // var person = {};
+    // function setPerson(obj) {
+    //     obj.name = 'xm';
+    // }
+    // setPerson(person);
+    // obj = person;
+
+
+
+    // function add() {
+    //     if (arguments.length == 0) return;
+    //     var sum = 0;
+    //     for (var i = 0; i < arguments.length; i++){
+    //         sum += arguments[i];
+    //     }
+    //     return sum;
+    // }
+    // console.log(add(1,2,3,4,5));
+
+
+    // function min() {
+    //     if (arguments.length == 0) return;
+    //
+    //     for (var i = 0; i < arguments.length; i++){
+    //         var mi = arguments[0];
+    //         if(arguments[i]<mi){
+    //             mi = arguments[i];
+    //         }
+    //     }
+    //     return mi;
+    // }
+    // var arr = [2, 4, 1, -1, 56, 3, -7];
+    // console.log(min.apply(window,arr));
+
+    // $.each({name:'xm',sex:'male'},function (index,item) {
+    //     console.log(index);
+    //     console.log(item);
+    // })
+    // for (var i = 0;i < [1,2,3].length; i++){
+    //     console.log(index);
+    //     console.log(item);
+    // }
+
+    // function factorial(num) {
+    //     if (num <= 1) return 1;
+    //     return num * arguments.callee(num - 1);
+    // }
+    // console.log(factorial(5));
+
+// function add(num1,num2) {
+//     if (arguments.length != add.length) throw new Error('请输入' + add.length + '个参数!');
+//     return num1 + num2;
+// }
+//
+// console.log(add(1,2));
+// console.log(add(1));
+// console.log(add(1,2,3));
+
+    //
+    // function setPerson(name,sex) {
+    //     var person = {};
+    //     person.name = name;
+    //     person.sex = sex;
+    // }
+    // setPerson('xm','male');
+    // console.log(setPerson(name));
+
+
+    // function fn() {
+    //     return function (argument) {
+    //         console.log(1);
+    //     }
+    // }
+    // // fn()();
+    // var newFn = fn();
+    // newFn();
+
+    // function F() {
+    //
+    // }
+    // alert(F.prototype);
+    // alert(F.prototype instanceof Object);
+
+    // var obj = new Function ("a","b","return a+b");
+    // var s = obj(2,5);
+    // alert(s);
+
+    // var person = {
+    //     name:"zhangsan",
+    //     age:"26",
+    //     sex:"man",
+    //     eat:function (fds) {
+    //         alert("我在吃"+fds);
+    //     },
+    //     play:function (ga) {
+    //         alert("我在玩"+ga);
+    //     }
+    // };
+    // alert(person.age);
+    // person.eat("面条");
+    //
+    // var box = new Object();
+    // box.name = "zhangsan";
+    // box.age = 100;
+    // box.infos = function (str) {
+    //     return this.name+"---"+this.age+"---"+str;
+    // }
+    // var con = box.infos("吃饭呢");
+    // alert(con);
+
+//构造函数
+//     function person(name,sex,age) {
+//         this.name = name;
+//         this.sex = sex;
+//         this.age = age;
+//         this.show = function () {
+//             alert(this.name+"---"+this.sex+"---"+this.age);
+//         }
+//     }
+//
+//     var obj1 = new person("zhangshan","nan","20");
+//     alert(obj1.name);
+//     obj1.show();
+//     var obj2 = new person("liisi","nv","20");
+//     obj2.show();
+
+    //工厂模式
+    // function createObject(name,age) {
+    //     var obj = new Object();
+    //     obj.name = name;
+    //     obj.age = age;
+    //     obj.run =  function () {
+    //         return this.name+"--"+this.age+"---"+"运行中";
+    //     }
+    //     obj.say = function () {
+    //         return "今天天气不错";
+    //     }
+    //     return obj;
+    // }
+    // var box1 = createObject("张三",18);
+    // alert(box1.name);
+    // alert(box1.run());
+    // alert(box1.say());
+
+    //原型模式
+    // function test() {
+    //
+    // }
+    // test.prototype.color = "red";
+    // test.prototype.heights = "1.7";
+    // test.prototype.width = "1.2";
+    // test.prototype.showInfo = function () {
+    //     alert(this.color+"---"+this.heights+"---"+this.width);
+    // }
+    // test.prototype.getInfo = function () {
+    //     alert("aaa");
+    // }
+    // var car1 = new test();
+    // car1.showInfo();
+
+    // function test() {
+    //
+    // }
+    // test.prototype = {
+    //     color:"red",
+    //     height:"1.7",
+    //     widths:"1.2",
+    //     showInfo:function () {
+    //         alert(this.color+"---"+this.height+"---"+this.widths);
+    //     },
+    //     getInfo:function (str) {
+    //         alert(str);
+    //     }
+    // }
+    // var car1 = new test();
+    // car1.showInfo();
+
+    //混合模式声明对象
+    //构造加原型
+    // function blog(name,url,friend) {
+    //     this.name = name;
+    //     this.url = url;
+    //     this.friend = friend;
+    // }
+    // blog.prototype = {
+    //     test:"awt",
+    //     showInfo:function () {
+    //         alert(this.name+"---"+this.url);
+    //     },
+    //     getInfo:function () {
+    //         alert(this.friend);
+    //     },
+    // }
+    // var peo = new blog("张三","http://www.baidu.com","李四");
+    // alert(peo.friend);
+    // peo.showInfo();
+    // peo.getInfo();
+
+
+    //对象的遍历
+    //遍历对象的属性 对象可以当作数组的 处理 for in
+    // var ren = {};
+    // ren.name = "zhangsan";
+    // ren.age = "18";
+    // ren.len = "180";
+    // ren.demo = function () {
+    //     alert(this.name);
+    // }
+    // //ren.demo();
+    // for (var i in ren){
+    //     alert(ren[i]);
+    // }
+
+    // function ren() {
+    //     this.name = "zhangsan";
+    //     this.age = "18";
+    //     this.len = "180";
+    //     this.demo = function () {
+    //         alert(this.name);
+    //     }
+    // }
+    // var r = new ren();
+    // var str = "";
+    // for (var i in r){
+    //     alert(str += r[i]);
+    // }
+
+    //封装
+    // function A() {
+    //     function w() {
+    //         alert(11 + "$$$");
+    //     }
+    //     this.s = function () {
+    //         return w;
+    //     }
+    //
+    // }
+    // A.prototype = {
+    //     oth:function () {
+    //         alert("普通方法");
+    //     }
+    // };
+    // var a = new A();
+    // var b = a.s();
+    // b();
+    // a.oth();
+    
+    //js继承
+    //例1
+    // var person = function () {
+    //     person.prototype.say = function () {
+    //         alert("天气挺好");
+    //     }
+    // }
+    // person.prototype.gongzi = 500;
+    //
+    // var programmer = function () {};
+    // programmer.prototype = new person();
+    // programmer.prototype.wcd = function () {
+    //     alert("明天天气也不错");
+    // };
+    // programmer.prototype.gongzi = 1000;
+    //
+    // var p = new programmer();
+    // p.say();
+    // p.wcd();
+    // alert(p.gongzi);
+
+    //例2
+    // function person(name,age) {
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // person.prototype.sayhello = function () {
+    //     alert("属性name值"+this.name);
+    // }
+    // function student() {};
+    // student.prototype = new person("lisi",18);
+    // student.prototype.grade = 3;
+    // student.prototype.test = function () {
+    //     alert(this.grade);
+    // }
+    // var s = new student();
+    // s.sayhello();
+    // alert(s.grade);
+    // s.test();
+
+    //构造函数继承
+    // function parents(name) {
+    //     this.name = name;
+    //     this.say = function () {
+    //         alert("父亲的名字："+this.name);
+    //     }
+    // }
+    //
+    // function child(name,age) {
+    //     this.pObj = parents;
+    //     this.pObj(name);
+    //     this.age = age;
+    //     this.sayC = function () {
+    //         alert("child"+this.name+"---"+"age"+this.age);
+    //     }
+    // }
+    //
+    // var p = new parents("zhangsan");
+    // p.say();
+    // var c = new child("lisi",18);
+    // c.sayC();
+
+    //call apply
+    // function person(name,age,len) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.len = len;
+    //     this.say = function () {
+    //         alert(this.name+":"+this.age+":"+this.len);
+    //     }
+    // }
+    //
+    // function student(name,age) {
+    //     person.call(this,name,age);
+    // }
+    //
+    // function teacher(name,age,len) {
+    //     person.apply(this,[name,age,len]);
+    // }
+    //
+    // var per = new person("zhangsan",18,170);
+    // per.say();
+    // var stu = new student("lishi",20);
+    // stu.say();
+    // var tea = new teacher("wangwu",22,180);
+    // tea.say();
+
+
+
+    // function demo() {
+    //     alert(arguments.callee);
+    // }
+    // demo();
+    // var sum = function (n) {
+    //     if (n <= 1){
+    //         return 1;
+    //     }else {
+    //         return n + arguments.callee(n-1);
+    //     }
+    // }
+    // alert(sum(5));
+
+
+    // var x = 0;
+    // function test() {
+    //     alert(this.x);
+    // }
+    // var o = {};
+    // o.x = 1;
+    // o.m = test;
+    // o.m.apply();
+    // o.m.apply(o);
+    //
+    // var str = '一个"普通字符"在匹配字符串的时候，匹配与它相同的一个字符';
+    // var pattern = /普通字符/;
+    // console.log(pattern.test(str));
+    // console.log(pattern.exec(str));
+    //
+    // var str1 = '一个"普通字符"在匹配字符串的时候，匹配与它相同的一个字符';
+    // var pattern1 = new RegExp('普通字符');
+    // console.log(pattern1.test(str1));
+    // console.log(pattern1.exec(str1));
+
+    var str = 'I Love js';
+    var userInput = 'love';
+    var pattern = new RegExp(userInput,'i');
+    console.log(pattern);
+    console.log(typeof pattern);
+    console.log(pattern.exec(str));
+</script>
+<body>
+
+</body>
+</html>
